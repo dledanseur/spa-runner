@@ -34,7 +34,10 @@ RUN chown -R 1001:0 /usr/libexec/s2i && \
     chown -R 1001:0 /var/log/nginx && \
     chmod 770 /var/log/nginx && \
     chown -R 1001:0 /run && \
-    chmod 770 /run
+    chmod 770 /run && \
+    chown -R 1001:0 /usr/share/nginx && \
+    chmod 770 /usr/share/nginx
+    
 
 
 USER 1001

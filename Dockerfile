@@ -30,9 +30,12 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 
 COPY nginx.conf /etc/nginx
 
+USER 1001
+
 RUN chown -R 1001:0 /usr/libexec/s2i && \
     chmod +x /usr/libexec/s2i/* && \
-    chown -R 1001:0 /var/log/nginx
+    chown -R 1001:0 /var/log/nginx && \
+    chmod 770 /var/log/nginx
 
 WORKDIR /tmp
 

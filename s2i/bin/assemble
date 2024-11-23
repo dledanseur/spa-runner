@@ -3,4 +3,4 @@ if [[ "$1" == "-h" ]]; then
 	exec /usr/libexec/s2i/usage
 fi
 
-cp -Rf /tmp/dist/* /usr/share/nginx/html/
+cp -Rf /tmp/src/dist/* /usr/share/nginx/html/

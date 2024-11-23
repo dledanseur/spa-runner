@@ -32,7 +32,9 @@ COPY nginx.conf /etc/nginx
 RUN chown -R 1001:0 /usr/libexec/s2i && \
     chmod +x /usr/libexec/s2i/* && \
     chown -R 1001:0 /var/log/nginx && \
-    chmod 770 /var/log/nginx
+    chmod 770 /var/log/nginx && \
+    chown -R 1001:0 /run && \
+    chmod 770 /run
 
 
 USER 1001

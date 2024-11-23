@@ -28,8 +28,11 @@ RUN microdnf install -y nginx tar findutils
 # sets io.openshift.s2i.scripts-url label that way, or update that label
 COPY ./s2i/bin/ /usr/libexec/s2i
 
+COPY nginx.conf /etc/nginx
+
 RUN chown -R 1001:0 /usr/libexec/s2i && \
-    chmod +x /usr/libexec/s2i/*
+    chmod +x /usr/libexec/s2i/* && \
+    chown -R 1001:0 /var/log/nginx
 
 WORKDIR /tmp
 
